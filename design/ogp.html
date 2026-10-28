@@ -1,6 +1,6 @@
 <!-- Source of public/ogp.png. Open in a browser at 1200x630 and take a screenshot to regenerate it. -->
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -41,16 +41,16 @@
     <div class="left">
       <div class="brand">
         <svg viewBox="0 0 32 32"><path d="M8 4h16l6 8-14 17L2 12z" fill="#d6284c"/><path d="M2 12h28M8 4l8 25M24 4l-8 25M8 4l3 8M24 4l-3 8" stroke="#fff" stroke-opacity=".45" fill="none"/></svg>
-        Ruby VM ビジュアライザ
+        Ruby VM Visualizer
       </div>
       <div class="eyebrow">CRuby 4.0 · YARV</div>
-      <h1>Ruby VM の<br>なかをのぞく</h1>
-      <div class="tag">積む <i>·</i> 取り出す <i>·</i> 計算する</div>
+      <h1>Look inside<br>the Ruby VM</h1>
+      <div class="tag">Push <i>·</i> Pop <i>·</i> Compute</div>
       <div class="en">Watch the CRuby VM run your Ruby code<br>one instruction at a time — right in your browser.</div>
       <div class="url">yuuu.github.io/ruby-vm-visualizer</div>
     </div>
     <div class="card">
-      <div class="t">命令列 <code>puts a + b</code></div>
+      <div class="t">Instructions <code>puts a + b</code></div>
       <div class="ins"><span></span><span><b>putself</b></span></div>
       <div class="ins"><span></span><span><b>getlocal</b> a</span></div>
       <div class="ins"><span></span><span><b>getlocal</b> b</span></div>
@@ -63,14 +63,14 @@
             <div class="slot">1</div>
             <div class="slot">2</div>
           </div>
-          <div class="lbl">opt_plus の前</div>
+          <div class="lbl">before opt_plus</div>
         </div>
         <div>
           <div class="col">
             <div class="slot">main</div>
             <div class="slot push">3</div>
           </div>
-          <div class="lbl">opt_plus の後</div>
+          <div class="lbl">after opt_plus</div>
         </div>
       </div>
     </div>

@@ -22,6 +22,8 @@ Pushing to `main` builds the site and deploys it to GitHub Pages (`.github/workf
 
 The tests and the sample build need Ruby 4.0.x (to match the instruction set of ruby.wasm in the browser).
 
+The social preview image `public/ogp.png` is rendered from `design/ogp.html` (1200×630).
+
 ## Rebuilding the samples
 
 After editing `samples/*.rb`, rebuild their instruction sequences. Sample titles (Japanese and English) live in `samples/titles.json`.
@@ -39,3 +41,7 @@ npm run samples   # set RUBY=/path/to/ruby to choose the ruby
 - `scripts/trace.ts` — a dev script that runs the VM from the command line (`TRACE=1 npx vite-node scripts/trace.ts file.rb`)
 
 Some features are not supported, such as Regexp, Struct, Fiber, argument forwarding (`...`), and file I/O.
+
+## License
+
+[MIT](LICENSE). The bundled ruby.wasm (CRuby) is distributed under its own license; see `node_modules/@ruby/4.0-wasm-wasi/LICENSE`.

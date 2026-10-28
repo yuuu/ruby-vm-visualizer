@@ -20,9 +20,10 @@
     "vitest": "^3.2.7"
   },
   "dependencies": {
+    "@ruby/4.0-wasm-wasi": "^2.10.1",
     "@ruby/wasm-wasi": "^2.10.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@ruby/4.0-wasm-wasi": "^2.10.1"
-  }
+    "react-dom": "^18.3.1"
+  },
+  "license": "MIT"
 }

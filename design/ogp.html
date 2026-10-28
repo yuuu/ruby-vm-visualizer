@@ -1,0 +1,79 @@
+<!-- Source of public/ogp.png. Open in a browser at 1200x630 and take a screenshot to regenerate it. -->
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: #f6f3ee; font-family: "Noto Sans JP", sans-serif; color: #1e1b18; overflow: hidden; position: relative; }
+  .grid { position: absolute; inset: 0; background-image: radial-gradient(#e2dbd0 1.2px, transparent 1.2px); background-size: 24px 24px; opacity: .7; }
+  .wrap { position: relative; display: grid; grid-template-columns: 1fr 470px; gap: 40px; padding: 64px 64px 56px 72px; height: 100%; }
+  .left { display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 26px; }
+  .brand svg { width: 46px; height: 46px; }
+  .eyebrow { margin-top: 42px; color: #d6284c; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 22px; letter-spacing: .02em; }
+  h1 { margin-top: 12px; font-size: 76px; line-height: 1.08; font-weight: 900; letter-spacing: -.01em; }
+  .tag { margin-top: 26px; font-size: 30px; font-weight: 700; display: flex; gap: 14px; align-items: center; }
+  .tag i { color: #d6284c; font-style: normal; }
+  .en { margin-top: auto; font-size: 23px; color: #6e665c; line-height: 1.45; }
+  .url { margin-top: 10px; font-family: "JetBrains Mono", monospace; font-size: 19px; color: #6e665c; }
+  .card { align-self: center; background: #fff; border: 1px solid #e2dbd0; border-radius: 22px; box-shadow: 0 2px 4px rgba(40,30,20,.06), 0 12px 40px rgba(40,30,20,.10); padding: 26px 26px 24px; font-family: "JetBrains Mono", monospace; }
+  .t { font-family: "Noto Sans JP"; font-size: 15px; font-weight: 700; color: #6e665c; margin-bottom: 10px; }
+  .t code { font-family: "JetBrains Mono"; background: #f2eee8; border-radius: 5px; padding: 1px 6px; font-size: 13px; }
+  .ins { display: grid; grid-template-columns: 22px 1fr; padding: 5px 10px; border-radius: 8px; font-size: 19px; color: #8a8580; }
+  .ins b { color: #1e1b18; font-weight: 600; }
+  .ins.cur { background: #fbe3e8; color: #1e1b18; }
+  .ins.cur::before { content: "▶"; color: #d6284c; }
+  .ins .op { color: #2f8f3a; font-weight: 700; }
+  .stack { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: end; }
+  .col { display: flex; flex-direction: column-reverse; gap: 6px; border: 2px dashed #cfc6b8; border-top: none; border-radius: 0 0 12px 12px; padding: 8px; min-height: 150px; }
+  .slot { text-align: center; padding: 6px; border-radius: 8px; background: #f2eee8; border: 1px solid #e2dbd0; font-size: 19px; }
+  .slot.pop { text-decoration: line-through; text-decoration-color: #d6284c; color: #8a8580; background: transparent; border-style: dashed; }
+  .slot.push { background: #dff0e3; border-color: #24914b; font-weight: 700; }
+  .lbl { font-family: "Noto Sans JP"; font-size: 13px; color: #6e665c; text-align: center; margin-top: 6px; }
+  .arrow { position: absolute; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="left">
+      <div class="brand">
+        <svg viewBox="0 0 32 32"><path d="M8 4h16l6 8-14 17L2 12z" fill="#d6284c"/><path d="M2 12h28M8 4l8 25M24 4l-8 25M8 4l3 8M24 4l-3 8" stroke="#fff" stroke-opacity=".45" fill="none"/></svg>
+        Ruby VM ビジュアライザ
+      </div>
+      <div class="eyebrow">CRuby 4.0 · YARV</div>
+      <h1>Ruby VM の<br>なかをのぞく</h1>
+      <div class="tag">積む <i>·</i> 取り出す <i>·</i> 計算する</div>
+      <div class="en">Watch the CRuby VM run your Ruby code<br>one instruction at a time — right in your browser.</div>
+      <div class="url">yuuu.github.io/ruby-vm-visualizer</div>
+    </div>
+    <div class="card">
+      <div class="t">命令列 <code>puts a + b</code></div>
+      <div class="ins"><span></span><span><b>putself</b></span></div>
+      <div class="ins"><span></span><span><b>getlocal</b> a</span></div>
+      <div class="ins"><span></span><span><b>getlocal</b> b</span></div>
+      <div class="ins cur"><span class="op">opt_plus</span></div>
+      <div class="ins"><span></span><span><b>send</b> :puts</span></div>
+      <div class="stack">
+        <div>
+          <div class="col">
+            <div class="slot">main</div>
+            <div class="slot">1</div>
+            <div class="slot">2</div>
+          </div>
+          <div class="lbl">opt_plus の前</div>
+        </div>
+        <div>
+          <div class="col">
+            <div class="slot">main</div>
+            <div class="slot push">3</div>
+          </div>
+          <div class="lbl">opt_plus の後</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

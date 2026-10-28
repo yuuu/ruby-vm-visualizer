@@ -7,7 +7,7 @@ A learning site that compiles Ruby code into CRuby's YARV instruction sequence a
 - Shows the instruction sequence (iseq) and its catch table, the fetch → decode → execute stages, the VM stack (local variables, env data, operand stack, sp / ep), and the control frames
 - Step forward / back, auto-run, breakpoints, and run to the end
 - Explanation pages on how the stack machine works, an instruction list, and more
-- Japanese / English switch (buttons in the header; the first visit follows the browser's language)
+- English / Japanese switch (buttons in the header; English by default)
 
 ## Development
 

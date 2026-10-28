@@ -24,7 +24,7 @@ export function pick<V>(lang: Lang, ja: V, en: V): V {
   return lang === "en" ? en : ja;
 }
 
-/** Uses the saved setting, or the browser's language if there is none */
+/** Uses the saved setting, or English if there is none */
 export function initialLang(): Lang {
   try {
     const saved = localStorage.getItem("lang");
@@ -32,5 +32,5 @@ export function initialLang(): Lang {
   } catch {
     /* fall back to the default if it cannot be read */
   }
-  return typeof navigator !== "undefined" && !navigator.language.toLowerCase().startsWith("ja") ? "en" : "ja";
+  return "en";
 }

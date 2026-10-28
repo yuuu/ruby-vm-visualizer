@@ -1,0 +1,58 @@
+{
+  "01_hello": {
+    "ja": "いちばん簡単なプログラム: 値を積んで、取り出して計算する",
+    "en": "The simplest program: push values, pop them, and compute"
+  },
+  "02_if": {
+    "ja": "条件分岐: branchunless でジャンプする様子を見てみよう",
+    "en": "Conditionals: watch branchunless jump"
+  },
+  "03_while": {
+    "ja": "while ループ: 後ろ向きの jump で繰り返す",
+    "en": "while loops: repeat with a backward jump"
+  },
+  "04_method": {
+    "ja": "メソッド呼び出し: 積んだ引数がそのまま呼び出し先のローカル変数になる",
+    "en": "Method calls: pushed arguments become the callee's local variables"
+  },
+  "05_fib": {
+    "ja": "再帰呼び出し: フレームが積まれては外れる",
+    "en": "Recursion: frames are pushed and popped"
+  },
+  "06_block": {
+    "ja": "ブロック: getlocal_WC_1 で 1 つ外側の変数を読み書きする",
+    "en": "Blocks: read and write the outer variable with getlocal_WC_1"
+  },
+  "07_class": {
+    "ja": "クラス定義: defineclass / definemethod と、インスタンス変数",
+    "en": "Class definitions: defineclass / definemethod and instance variables"
+  },
+  "08_string": {
+    "ja": "文字列と式展開: objtostring / concatstrings",
+    "en": "Strings and interpolation: objtostring / concatstrings"
+  },
+  "09_exception": {
+    "ja": "例外処理: 例外ハンドラ表 (catch table) から rescue 節を見つける",
+    "en": "Exceptions: find the rescue clause via the catch table"
+  },
+  "10_inherit": {
+    "ja": "継承と super",
+    "en": "Inheritance and super"
+  },
+  "11_hash": {
+    "ja": "ハッシュと配列の組み合わせ",
+    "en": "Combining hashes and arrays"
+  },
+  "12_yield": {
+    "ja": "yield: invokeblock で自作メソッドからブロックを呼ぶ",
+    "en": "yield: call a block from your own method with invokeblock"
+  },
+  "13_closure": {
+    "ja": "クロージャ: Proc が捕まえた環境は、スタックからヒープへ移る",
+    "en": "Closures: the environment captured by a Proc moves from the stack to the heap"
+  },
+  "14_break": {
+    "ja": "break と ensure: throw 命令でフレームをまたいで脱出する",
+    "en": "break and ensure: the throw instruction escapes across frames"
+  }
+}

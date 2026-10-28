@@ -1,0 +1,100 @@
+[
+  {
+    "id": "01_hello",
+    "title": "いちばん簡単なプログラム: 値を積んで、取り出して計算する",
+    "titleEn": "The simplest program: push values, pop them, and compute",
+    "iseq": "samples/01_hello.json",
+    "source": "# The simplest program: push values, pop them, and compute\na = 1\nb = 2\nc = a + b\nputs c\n"
+  },
+  {
+    "id": "02_if",
+    "title": "条件分岐: branchunless でジャンプする様子を見てみよう",
+    "titleEn": "Conditionals: watch branchunless jump",
+    "iseq": "samples/02_if.json",
+    "source": "# Conditionals: watch branchunless jump\nx = 7\nif x > 5\n  puts \"big\"\nelse\n  puts \"small\"\nend\n"
+  },
+  {
+    "id": "03_while",
+    "title": "while ループ: 後ろ向きの jump で繰り返す",
+    "titleEn": "while loops: repeat with a backward jump",
+    "iseq": "samples/03_while.json",
+    "source": "# while loops: repeat with a backward jump\ni = 0\nsum = 0\nwhile i < 5\n  sum += i\n  i += 1\nend\nputs sum\n"
+  },
+  {
+    "id": "04_method",
+    "title": "メソッド呼び出し: 積んだ引数がそのまま呼び出し先のローカル変数になる",
+    "titleEn": "Method calls: pushed arguments become the callee's local variables",
+    "iseq": "samples/04_method.json",
+    "source": "# Method calls: pushed arguments become the callee's local variables\ndef add(a, b)\n  a + b\nend\n\ndef square(x)\n  x * x\nend\n\nputs add(square(3), 4)\n"
+  },
+  {
+    "id": "05_fib",
+    "title": "再帰呼び出し: フレームが積まれては外れる",
+    "titleEn": "Recursion: frames are pushed and popped",
+    "iseq": "samples/05_fib.json",
+    "source": "# Recursion: frames are pushed and popped\ndef fib(n)\n  if n < 2\n    n\n  else\n    fib(n - 1) + fib(n - 2)\n  end\nend\n\nputs fib(5)\n"
+  },
+  {
+    "id": "06_block",
+    "title": "ブロック: getlocal_WC_1 で 1 つ外側の変数を読み書きする",
+    "titleEn": "Blocks: read and write the outer variable with getlocal_WC_1",
+    "iseq": "samples/06_block.json",
+    "source": "# Blocks: read and write the outer variable with getlocal_WC_1\nsum = 0\n[1, 2, 3].each do |x|\n  sum += x * 10\nend\nputs sum\n\nsquares = (1..4).map { |n| n * n }\np squares\n"
+  },
+  {
+    "id": "07_class",
+    "title": "クラス定義: defineclass / definemethod と、インスタンス変数",
+    "titleEn": "Class definitions: defineclass / definemethod and instance variables",
+    "iseq": "samples/07_class.json",
+    "source": "# Class definitions: defineclass / definemethod and instance variables\nclass Counter\n  def initialize(start)\n    @count = start\n  end\n\n  def up(step = 1)\n    @count += step\n    self\n  end\n\n  def to_s\n    \"Counter(#{@count})\"\n  end\nend\n\nc = Counter.new(10)\nc.up.up(5)\nputs c\n"
+  },
+  {
+    "id": "08_string",
+    "title": "文字列と式展開: objtostring / concatstrings",
+    "titleEn": "Strings and interpolation: objtostring / concatstrings",
+    "iseq": "samples/08_string.json",
+    "source": "# Strings and interpolation: objtostring / concatstrings\nname = \"Ruby\"\nversion = 4\nmsg = \"Hello, #{name} #{version}!\"\nputs msg\nputs msg.upcase\nputs msg.length\n"
+  },
+  {
+    "id": "09_exception",
+    "title": "例外処理: 例外ハンドラ表 (catch table) から rescue 節を見つける",
+    "titleEn": "Exceptions: find the rescue clause via the catch table",
+    "iseq": "samples/09_exception.json",
+    "source": "# Exceptions: find the rescue clause via the catch table\ndef divide(a, b)\n  a / b\nrescue ZeroDivisionError => e\n  puts \"error: #{e.message}\"\n  0\nensure\n  puts \"divide done\"\nend\n\nputs divide(10, 2)\nputs divide(1, 0)\n"
+  },
+  {
+    "id": "10_inherit",
+    "title": "継承と super",
+    "titleEn": "Inheritance and super",
+    "iseq": "samples/10_inherit.json",
+    "source": "# Inheritance and super\nclass Animal\n  def initialize(name)\n    @name = name\n  end\n\n  def speak\n    \"#{@name} makes a sound\"\n  end\nend\n\nclass Dog < Animal\n  def speak\n    super + \" (Woof!)\"\n  end\nend\n\nanimals = [Animal.new(\"Cat\"), Dog.new(\"Pochi\")]\nanimals.each { |a| puts a.speak }\n"
+  },
+  {
+    "id": "11_hash",
+    "title": "ハッシュと配列の組み合わせ",
+    "titleEn": "Combining hashes and arrays",
+    "iseq": "samples/11_hash.json",
+    "source": "# Combining hashes and arrays\nscores = { alice: 80, bob: 65, carol: 92 }\nscores[:dave] = 70\npassed = scores.select { |name, score| score >= 70 }\npassed.each do |name, score|\n  puts \"#{name}: #{score}\"\nend\np scores.values.sum\n"
+  },
+  {
+    "id": "12_yield",
+    "title": "yield: invokeblock で自作メソッドからブロックを呼ぶ",
+    "titleEn": "yield: call a block from your own method with invokeblock",
+    "iseq": "samples/12_yield.json",
+    "source": "# yield: call a block from your own method with invokeblock\ndef twice\n  yield 1\n  yield 2\nend\n\ntwice { |n| puts n * 100 }\n\ndef find_first(list)\n  list.each do |x|\n    return x if x > 2\n  end\n  nil\nend\np find_first([1, 2, 3, 4])\n"
+  },
+  {
+    "id": "13_closure",
+    "title": "クロージャ: Proc が捕まえた環境は、スタックからヒープへ移る",
+    "titleEn": "Closures: the environment captured by a Proc moves from the stack to the heap",
+    "iseq": "samples/13_closure.json",
+    "source": "# Closures: the environment captured by a Proc moves from the stack to the heap\ndef make_counter\n  count = 0\n  -> { count += 1 }\nend\n\ncounter = make_counter\ncounter.call\ncounter.call\np counter.call\n"
+  },
+  {
+    "id": "14_break",
+    "title": "break と ensure: throw 命令でフレームをまたいで脱出する",
+    "titleEn": "break and ensure: the throw instruction escapes across frames",
+    "iseq": "samples/14_break.json",
+    "source": "# break and ensure: the throw instruction escapes across frames\nresult = [10, 20, 30].each do |x|\n  begin\n    break x * 2 if x == 20\n  ensure\n    puts \"ensure (x = #{x})\"\n  end\nend\np result\n"
+  }
+]

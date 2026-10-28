@@ -13,7 +13,7 @@
   "devDependencies": {
     "@types/node": "^22.20.5",
     "@types/react": "^18.3.31",
-    "@types/react-dom": "^18.3.7",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^4.7.0",
     "typescript": "^5.9.3",
     "vite": "^6.4.5",
@@ -23,7 +23,7 @@
     "@ruby/4.0-wasm-wasi": "^2.10.1",
     "@ruby/wasm-wasi": "^2.10.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^19.3.1"
   },
   "license": "MIT"
 }

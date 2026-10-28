@@ -18,6 +18,8 @@ npm test         # VM tests (compiles with the local ruby and compares the outpu
 npm run build    # builds a static site into dist/ (deployable as is to Vercel etc.)
 ```
 
+Pushing to `main` builds the site and deploys it to GitHub Pages (`.github/workflows/pages.yml`).
+
 The tests and the sample build need Ruby 4.0.x (to match the instruction set of ruby.wasm in the browser).
 
 ## Rebuilding the samples
